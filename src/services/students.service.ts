@@ -26,13 +26,7 @@ export const updateStudent = async (id: string, body: Student) => {
     return await getStudents();
 }
 
-// export const deleteStudent = (id: string) => {
-//     const index = students.findIndex( (student) => student.id.toString() === id)
-//     // debug : 
-//     console.log(index)
-//     if (index !== -1) {
-//         students.splice(index, 1); // index : position start, 1 : nb d'éléments à supprimer
-//     }
-//     console.log(students)
-//     return students;
-// }
+export const deleteStudent = async (id: string) => {
+    await StudentModel.deleteOne({ _id: new Types.ObjectId(id) });
+    return await getStudents();
+}

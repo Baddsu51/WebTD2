@@ -26,7 +26,8 @@ export const updateStudent = async (req: any, res: any) => {
     return res.status(200).json(students);
 }   
 
-// export const deleteStudent = (req: any, res: any) => {
-//     const { id } = req.params;
-//     return res.status(200).json(StudentsService.deleteStudent(id));
-// }
+export const deleteStudent = async (req: any, res: any) => {
+    const { id } = req.params;
+    const students = await StudentsService.deleteStudent(id);
+    return res.status(200).json(students);
+}
