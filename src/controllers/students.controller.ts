@@ -21,3 +21,8 @@ export const updateStudent = (req: any, res: any) => {
     const body = req.body;
     return res.status(200).json(StudentsService.updateStudent(id, body));
 }   
+
+export const deleteStudent = (req: any, res: any) => {
+    const { id } = req.params;
+    return res.status(200).json(StudentsService.deleteStudent(id));
+}
